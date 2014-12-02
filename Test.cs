@@ -29,7 +29,6 @@ public class Test : MonoBehaviour {
 						hit.transform.position = newpos;									//Moves hit object to inventory slot
 						amountOfItems++;													//Moves one slot in inventory
 						hit.transform.tag = "Inventory";									//Changes tag on target
-						hit.transform.tag = "Inventory";									//Removes tag from object
 				}
 			}
 		}	//End of click logic
