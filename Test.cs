@@ -3,17 +3,11 @@ using System.Collections;
 
 public class Test : MonoBehaviour {
 
-	public struct ItemObject
-	{
-		public GameObject item;
-		public string itemName;
-	}
-	
-	ItemObject[] itemInventory = new ItemObject[12];
-	int i = 0;
-		// Use this for initialization
+	private int amountOfItems;		// Use this for initialization
+
 	void Start () 
 	{
+		amountOfItems = 0;
 	}
 	
 	// Update is called once per frame
@@ -22,23 +16,20 @@ public class Test : MonoBehaviour {
 		RaycastHit hit = new RaycastHit();
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
-		if(Input.GetButtonUp("Fire1"))
+		if(Input.GetButtonUp("Fire1"))			// Click logic
 		{
 			if(Physics.Raycast(ray, out hit, 10000))
 			{
-				if(hit.transform.tag == "Clue")
+				if(hit.transform.tag == "Clue")	//If hit target has "Clue" tag
 				{
-					if(itemInventory[i].itemName == null)
-					{
-						itemInventory[i].itemName = hit.collider.gameObject.name;
-						Debug.Log(itemInventory[i].itemName + i);
-						Destroy(hit.transform.gameObject);
-						i++;
-					}
+						Vector3 newpos = new Vector3(-9.5f + amountOfItems, -1.5f, -3f);	//Location of inventory slots
+						hit.transform.position = newpos;									//Moves hit object to inventory slot
+						amountOfItems++;													//Moves one slot in inventory
+						hit.transform.tag = "Inventory";									//Changes tag on target
 				}
 			}
-		}
+		}	//End of click logic
 	}
 }
-	
+
 
