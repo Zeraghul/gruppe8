@@ -9,7 +9,7 @@ public class Dialog : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnMouseDown () {
-		if(this.tag == "Clue")
+		if(this.tag != "Inventory")
 		DialogBox.DrawGUI (textField, inputImage);
 	}
 }

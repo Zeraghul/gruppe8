@@ -7,17 +7,17 @@ public class DialogBox : MonoBehaviour {
 	private static Texture2D portrait;
 	public Texture2D background;
 
-	private int buttonX = -110;
-	private int buttonY = 100;
+	public int buttonX = -110;
+	public int buttonY = 100;
 
-	private int backX = -226;
-	private int backY = 40;
+	public int backX = -226;
+	public int backY = 40;
 
-	private int portX = -320;
-	private int portY = 40;
+	public int portX = -320;
+	public int portY = 40;
 
-	private int tekstX = -233;
-	private int tekstY = 58;
+	public int tekstX = -233;
+	public int tekstY = 58;
 
 	public static void DrawGUI (string textField, Texture2D inputImage) {
 		value = textField;

@@ -11,5 +11,4 @@ public class ClueSpawn : MonoBehaviour {
 	void Start () {
 		Instantiate(Clue,CluePos.position, CluePos.rotation);
 	}
-
 }

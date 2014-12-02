@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Test : MonoBehaviour {
 
+
 	private int amountOfItems;		// Use this for initialization
 
 	void Start () 
@@ -31,6 +32,11 @@ public class Test : MonoBehaviour {
 				}
 			}
 		}	//End of click logic
+
+		if(amountOfItems == 3)
+		{
+			Application.LoadLevel(1);
+		}
 	}
 }
 
