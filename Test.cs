@@ -3,7 +3,11 @@ using System.Collections;
 
 public class Test : MonoBehaviour {
 
+<<<<<<< HEAD
 	private int amountOfItems;		// Use this for initialization
+=======
+	int amountOfItems;		// Use this for initialization
+>>>>>>> origin/master
 
 	void Start () 
 	{
@@ -15,6 +19,7 @@ public class Test : MonoBehaviour {
 	{
 		RaycastHit hit = new RaycastHit();
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+		Debug.DrawRay (ray.origin, ray.direction * 10, Color.cyan);
 
 		if(Input.GetButtonUp("Fire1"))			// Click logic
 		{
@@ -25,7 +30,11 @@ public class Test : MonoBehaviour {
 						Vector3 newpos = new Vector3(-9.5f + amountOfItems, -1.5f, -3f);	//Location of inventory slots
 						hit.transform.position = newpos;									//Moves hit object to inventory slot
 						amountOfItems++;													//Moves one slot in inventory
+<<<<<<< HEAD
 						hit.transform.tag = "Inventory";									//Changes tag on target
+=======
+						hit.transform.tag = "Inventory";											//Removes tag from object
+>>>>>>> origin/master
 				}
 			}
 		}	//End of click logic
