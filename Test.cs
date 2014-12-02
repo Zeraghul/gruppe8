@@ -4,7 +4,9 @@ using System.Collections;
 public class Test : MonoBehaviour {
 
 
-	private int amountOfItems;		// Use this for initialization
+	private int amountOfItems;		//Antall clues man har plukket
+	public GameObject EndOfLevel;	//Prefab for å gå til neste level
+	public Transform EndOfLevelPos;	//Prefab for position til neste level prefab
 
 	void Start () 
 	{
@@ -16,7 +18,6 @@ public class Test : MonoBehaviour {
 	{
 		RaycastHit hit = new RaycastHit();
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		Debug.DrawRay (ray.origin, ray.direction * 10, Color.cyan);
 
 		if(Input.GetButtonUp("Fire1"))			// Click logic
 		{
@@ -28,14 +29,15 @@ public class Test : MonoBehaviour {
 						hit.transform.position = newpos;									//Moves hit object to inventory slot
 						amountOfItems++;													//Moves one slot in inventory
 						hit.transform.tag = "Inventory";									//Changes tag on target
-						hit.transform.tag = "Inventory";											//Removes tag from object
+						hit.transform.tag = "Inventory";									//Removes tag from object
 				}
 			}
 		}	//End of click logic
 
 		if(amountOfItems == 3)
-		{
-			Application.LoadLevel(1);
+		{	//Spawner prefab på EndOfLevelPos sin position
+			Instantiate(EndOfLevel,EndOfLevelPos.position, EndOfLevelPos.rotation);
+			amountOfItems = 0;	//Resett amountOfItems for å hindre infinite loop
 		}
 	}
 }
