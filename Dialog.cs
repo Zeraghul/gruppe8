@@ -11,5 +11,6 @@ public class Dialog : MonoBehaviour {
 	void OnMouseDown () {	//If left clicked
 		if(this.tag != "Inventory")
 			DialogBox.DrawGUI (textField, inputImage);	//See DialogBox.c
+			DialogBox.DrawGUI (textField, inputImage);
 	}
 }
