@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ClueSpawn : MonoBehaviour {
 
-	public GameObject Clue;
-	public Transform CluePos;
+	public GameObject Clue;		//Clue Prefab
+	public Transform CluePos;	//Clue Prefab spawn position
 
 
 	// Use this for initialization
